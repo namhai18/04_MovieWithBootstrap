@@ -1,0 +1,120 @@
+html,body {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+/* HEADER */
+.movieNarbar .navbar-nav{
+    border-bottom: 1px solid rgba(255,255,255,.2);
+}
+/* --6-- */
+.movieNarbar .navbar-nav .nav-item::after{
+    content: '';
+    height : 3px;
+    width: 0%;
+    /* hướng trải màu cam */
+    background: linear-gradient(to right,#fbbd61,#ec7532);
+    display: block;
+    box-shadow: 0 0 20px 0 #fbbd61;
+    transition:all 0.5s linear;
+}
+.movieNarbar .navbar-nav .nav-item:hover::after {
+    width:100%;
+}
+/* --7-- default home lên có dấu gạch dưới cam */
+.movieNarbar .navbar-nav .nav-item.active::after{
+    width: 100%;
+    box-shadow: none;
+}
+
+/* CAROUSEL */
+#movieCarousel .carousel-item .carousel-caption{
+    top: 70%;
+    left: 50%;
+    text-align: left;
+    /* translate dựa vào kích thước chính caption */
+    transform : translate(-50%,-50%);
+}
+/* --9-- */
+.carousel-indicators li{
+    width: 10px;
+    height: 10px;
+    border : 1px solid white;   
+    border-radius: 50%;
+    background-color: transparent;
+    opacity: 1;
+}
+.carousel-indicators li.active{
+    background-color: white;
+}
+.carousel-indicators {
+    justify-content: flex-start;
+    left : 50%;
+    transform: translate(-50%);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+/* --12-- */
+.newIN_content img {
+    width: 100%;
+}
+.newIn_item {
+    border-radius: 20px;
+    /* Phần hình nào bung ra khỏi div thì ẩn */
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+}
+/* --13-- */
+/* Xoay khối vuông đi và trượt khối sang trái  */
+.newIn_overlay{
+    position: absolute;
+    top: 0;
+    /* ban đầu dấu hình cam đi */
+    left: calc(-165px - 250%);
+    width: 250%;
+    height: 100%;
+    background-color: coral;
+    /* Đẩy nghiêng background thành 45 độ */
+    transform: skew(45deg);
+    transition: all 0.5s;
+    color:white;
+}
+/* di chuyen thẻ màu cam vào khi hover lên khối div chứa image */
+.newIn_item:hover .newIn_overlay{
+    left: -165px;
+    opacity: 0.7;
+    color:white;
+}
+/* cho thẻ text hiển thị lên trung tâm block hình */
+.newIn_text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* trả về trung tâm 1 block, canh vị trí hiển thị cho text */
+    transform : translate(-50%,-80%);
+    color : white;
+    opacity: 0;
+}
+.newIn_item:hover .newIn_text{
+    opacity: 1;
+    color:white;
+}
+.newIn_text i{
+    width: 50px;
+    height: 50px;
+    border : 1px solid white;   
+    border-radius: 50%;
+    line-height: 50px;
+    text-align: center;
+}
+/* --TAB MENU CSS-- */
+.single_item {
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+
+
